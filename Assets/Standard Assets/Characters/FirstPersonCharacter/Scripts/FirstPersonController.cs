@@ -132,6 +132,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_MouseLook.UpdateCursorLock();
         }
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("PickUp"))
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
 
 
         private void PlayJumpSound()
